@@ -7,12 +7,12 @@ endpoint = 'http://localhost:8000/api/'
 #get_responsce = requests.get(endpoint) # Application Programming interface
 
 # we can also pass in our own json data to the requests, if you want to use json we can just think of an python Dict 
-get_response = requests.get(endpoint, json = {'query':'Hello World'})
+get_response = requests.get(endpoint, params={'abc': 123},json = {'query':'Hello World'})
 # it will just echo back the dict that we pass
 # we can also send it as an raw data just replace 'json' with 'data' it will consider as a form in the outPut
 
-print(get_response.text)
-print(get_response.status_code) # -> 2nd Chapter in the Series
+#print(get_response.text)
+#print(get_response.status_code) # -> 2nd Chapter in the Series
 
 # where we can also get the json 
 
