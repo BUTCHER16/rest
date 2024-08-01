@@ -1,19 +1,22 @@
 import requests
 
-endpoint = 'https://httpbin.org/status/200'
-endpoint = 'https://httpbin.org/anything'
+#endpoint = 'https://httpbin.org/status/200'
+#endpoint = 'https://httpbin.org/anything'
+endpoint = 'http://localhost:8000/api/'
 
 #get_responsce = requests.get(endpoint) # Application Programming interface
 
 # we can also pass in our own json data to the requests, if you want to use json we can just think of an python Dict 
-get_responsce = requests.get(endpoint, json = {'query':'Hello World'})
+get_response = requests.get(endpoint, json = {'query':'Hello World'})
 # it will just echo back the dict that we pass
 # we can also send it as an raw data just replace 'json' with 'data' it will consider as a form in the outPut
 
-print(get_responsce.text)
+print(get_response.text)
+print(get_response.status_code) # -> 2nd Chapter in the Series
 
 # where we can also get the json 
-print(get_responsce.json())
+
+print(get_response.json())
 
 # there's also a status code that is used to know the out like error code ( 404 like this )
 
